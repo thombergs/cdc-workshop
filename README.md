@@ -7,8 +7,15 @@ and / or [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/)
 The concept of Consumer-Driven Contracts is best learned by implementing one or more
 API consumer and provider with your own hands and test them against a contract.
 
-**Select at least one consumer and one provider** from the below scenarios and follow
+**Select a consumer / provider combination** from the table below and follow
 the instructions to set up a consumer-driven contract between them.
+
+| :arrow_down:Consumer / Provider:arrow_right:| Java (Pact) | Java (Spring Cloud Contract)|
+| ------------- |-------------| ----- |
+| Angular (Pact) | :heavy_check_mark: | :heavy_check_mark: |
+| Java (Pact) | :heavy_check_mark: | :x: |
+| Java (Spring Cloud Contract) | :x: | :heavy_check_mark: |
+
 
 After successfully setting up a contract test between one consumer and one provider
 you may create additional consumers and providers and set up additional contracts.
