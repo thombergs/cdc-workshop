@@ -29,17 +29,6 @@ module.exports = function (config) {
     logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false,
-    pact: [{
-      cors: true,
-      port: 1234,
-      consumer: "ui",
-      provider: "userservice",
-      dir: "pacts",
-      spec: 2
-    }],
-    proxies: {
-      '/user-service/': 'http://127.0.0.1:1234/user-service/'
-    }
+    singleRun: false
   });
 };
