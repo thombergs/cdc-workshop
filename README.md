@@ -7,7 +7,7 @@ and / or [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/)
 The concept of Consumer-Driven Contracts is best learned by implementing one or more
 API consumer and provider with your own hands and test them against a contract.
 
-Select at least one consumer and one provider from the below scenarios and follow
+**Select at least one consumer and one provider** from the below scenarios and follow
 the instructions to set up a consumer-driven contract between them.
 
 After successfully setting up a contract test between one consumer and one provider
@@ -24,6 +24,7 @@ you may create additional consumers and providers and set up additional contract
 1. Run `npm run test` to verify that the Angular tests run on your machine (you need to have Google Chrome installed)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contracts-with-angular-and-pact/) 
    to set up a consumer test that creates a pact file
+1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-angular)
 1. Run `npm run test` again to run the tests and check that a pact file has been created in the `pacts` folder
 
 **Results:**
