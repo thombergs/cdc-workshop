@@ -10,11 +10,11 @@ API consumer and provider with your own hands and test them against a contract.
 **Select a consumer / provider combination** from the table below and follow
 the instructions to set up a consumer-driven contract between them.
 
-| :arrow_down:Consumer / Provider:arrow_right:| Java (Pact) | Java (Spring Cloud Contract)|
+| | Java Provider with Pact | Java Provider with Spring Cloud Contract|
 | ------------- |-------------| ----- |
-| **Angular (Pact)** | :heavy_check_mark: | :heavy_check_mark: |
-| **Java (Pact)** | :heavy_check_mark: | :x: |
-| **Java (Spring Cloud Contract)** | :x: | :heavy_check_mark: |
+| **Angular Consumer with Pact** | :heavy_check_mark: | :heavy_check_mark: |
+| **Java Consumer with Pact** | :heavy_check_mark: | :x: |
+| **Java Consumer with Spring Cloud Contract** | :x: | :heavy_check_mark: |
 
 
 After successfully setting up a contract test between one consumer and one provider
