@@ -12,9 +12,9 @@ the instructions to set up a consumer-driven contract between them.
 
 | :arrow_down:Consumer / Provider:arrow_right:| Java (Pact) | Java (Spring Cloud Contract)|
 | ------------- |-------------| ----- |
-| Angular (Pact) | :heavy_check_mark: | :heavy_check_mark: |
-| Java (Pact) | :heavy_check_mark: | :x: |
-| Java (Spring Cloud Contract) | :x: | :heavy_check_mark: |
+| **Angular (Pact)** | :heavy_check_mark: | :heavy_check_mark: |
+| **Java (Pact)** | :heavy_check_mark: | :x: |
+| **Java (Spring Cloud Contract)** | :x: | :heavy_check_mark: |
 
 
 After successfully setting up a contract test between one consumer and one provider
