@@ -10,11 +10,11 @@ API consumer and provider with your own hands and test them against a contract.
 **Select a consumer / provider combination** from the table below and follow
 the instructions to set up a consumer-driven contract between them.
 
-| | Java Provider with Pact | Java Provider with Spring Cloud Contract|
+| | Spring MVC Provider with Pact | Spring MVC Provider with Spring Cloud Contract|
 | ------------- |-------------| ----- |
 | **Angular Consumer with Pact** | :heavy_check_mark: | :heavy_check_mark: |
-| **Java Consumer with Pact** | :heavy_check_mark: | :x: |
-| **Java Consumer with Spring Cloud Contract** | :x: | :heavy_check_mark: |
+| **Java Feign Consumer with Pact** | :heavy_check_mark: | :x: |
+| **Java Feign Consumer with Spring Cloud Contract** | :x: | :heavy_check_mark: |
 
 
 After successfully setting up a contract test between one consumer and one provider
@@ -31,6 +31,8 @@ you may create additional consumers and providers and set up additional contract
 1. Run `npm run test` to verify that the Angular tests run on your machine (you need to have Google Chrome installed)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contracts-with-angular-and-pact/) 
    to set up a consumer test that creates a pact file
+   * create a different API from the one in the article (instead of creating users, do something else)
+   * choose different consumer and provider names to make your implementation unique
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-angular)
 1. Run `npm run test` again to run the tests and check that a pact file has been created in the `pacts` folder
 
@@ -40,8 +42,17 @@ you may create additional consumers and providers and set up additional contract
 
 ### Java Spring Consumer with Pact
 
-1. Clone the starting repository at TODO
-1.
+1. Start with the code in the folder [consumer/pact-feign](consumer/pact-feign)
+1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-feign-pact/)
+   to set up a consumer test that creates a pact file
+   * create a different API from the one in the article (instead of creating users, do something else)
+   * choose different consumer and provider names to make your implementation unique
+1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-feign-consumer)
+1. Run `./gradlew build` to run the tests and check that a pact file has been created in the folder `target/pacts`
+
+**Results:**
+* a pact file created from an Gradle build 
+* if working with a Pact Broker: the pact file has been published on the Pact Broker
 
 ### Java Spring Consumer with Spring Cloud Contract
 
