@@ -4,8 +4,9 @@ This repository points to some material that can be used in a hands-on workshop
 to get a feel for Consumer-Driven Contracts with the frameworks [Pact](https://docs.pact.io/)
 and / or [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/).
 
-The concept of Consumer-Driven Contracts is best learned by implementing one or more
-API consumer and provider with your own hands and test them against a contract.
+If you need to get an idea about the concept of Consumer-Driven Contracts, read
+[this article](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/) 
+before moving on to the tasks below.
 
 ## The Tasks in this Workshop
 
