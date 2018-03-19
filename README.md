@@ -9,7 +9,7 @@ API consumer and provider with your own hands and test them against a contract.
 
 ## The Tasks in this Workshop
 
-**Select a consumer / provider combination** from the table below and follow
+Select a valid consumer / provider combination from the table below and follow
 the instructions to set up a consumer, a provider and a contract between them. 
 
 | | Spring MVC Provider with Pact | Spring MVC Provider with Spring Cloud Contract|
@@ -18,7 +18,7 @@ the instructions to set up a consumer, a provider and a contract between them.
 | **Java Feign Consumer with Pact** | :heavy_check_mark: | :x: |
 | **Java Feign Consumer with Spring Cloud Contract** | :x: | :heavy_check_mark: |
 
-Complete the following tasks:
+**Complete the following tasks**
 
 1. implement the selected consumer (which implies creating a contract)
 1. implement the selected provider (which implies creating a test against the contract)
@@ -62,8 +62,18 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Consumer with Spring Cloud Contract
 
-1. Clone the starting repository at TODO
-1.
+1. Start with the code in the folder [consumer/scc-feign](consumer/scc-feign)
+1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-consumer-spring-cloud-contract/)
+   to set up a contract and a consumer test against that contract
+   * in the contract, specify a different API from the one in the article (instead of creating users, do something else)
+   * the "provider code base" mentioned in the article is the folder [provider/scc-spring](provider/scc-spring)
+   * skip the step "verify the consumer code online" if you do not have access to a Maven repository where you can publish
+     the provider mock
+1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-consumer)
+
+**Results:**
+* a Groovy contract file in the provider code base
+* a working consumer test verifying that the client works as specified in the contract
 
 ## Provider Implementations
 
@@ -81,7 +91,13 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Provider with Spring Cloud Contract
 
-1. Clone the starting repository at TODO
-1.
+1. Start with the code in the folder [provider/scc-spring](provider/scc-spring)
+1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-provider-spring-cloud-contract/)
+   to set up a Spring REST Controller that satisfies the contract you specified in your consumer
+1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-provider)
+1. Run `./gradlew generateContractTests` to generate the provider tests
+1. Run `./gradlew build` to run the tests 
 
- 
+**Results:**
+* contract tests verifying that our controller works have been automatically generated
+* the contract test passes
