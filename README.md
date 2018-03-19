@@ -32,7 +32,7 @@ You can find more detailed steps for each of the consumers and providers below.
 
 1. Download and install the latest NodeJS distribution at [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 1. Verify that npm and Node are installed properly by calling `node -v` and `npm -v`
-1. Start with the code in the folder [consumer/pact-angular](consumer/pact-angular)
+1. Start with the code in the folder [consumer/pact-angular-userclient](consumer/pact-angular-userclient)
 1. Run `npm install` in the folder and check that a `node_modules` folder has been created
 1. Run `npm run test` to verify that the Angular tests run on your machine (you need to have Google Chrome installed)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contracts-with-angular-and-pact/) 
@@ -48,7 +48,7 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Consumer with Pact
 
-1. Start with the code in the folder [consumer/pact-feign](consumer/pact-feign)
+1. Start with the code in the folder [consumer/pact-feign-userclient](consumer/pact-feign-userclient)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-feign-pact/)
    to set up a consumer test that creates a pact file
    * create a different API from the one in the article (instead of creating users, do something else)
@@ -62,11 +62,11 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Consumer with Spring Cloud Contract
 
-1. Start with the code in the folder [consumer/scc-feign](consumer/scc-feign)
+1. Start with the code in the folder [consumer/scc-feign-userclient](consumer/scc-feign-userclient)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-consumer-spring-cloud-contract/)
    to set up a contract and a consumer test against that contract
    * in the contract, specify a different API from the one in the article (instead of creating users, do something else)
-   * the "provider code base" mentioned in the article is the folder [provider/scc-spring](provider/scc-spring)
+   * the "provider code base" mentioned in the article is the folder [provider/scc-spring-userservuce](provider/scc-spring-userservice)
    * skip the step "verify the consumer code online" if you do not have access to a Maven repository where you can publish
      the provider mock
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-consumer)
@@ -79,7 +79,7 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Provider with Pact
 
-1. Start with the code in the folder [provider/pact-spring](provider/pact-spring)
+1. Start with the code in the folder [provider/pact-spring-userservice](provider/pact-spring-userservice)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-provider-pact-spring/)
    to set up a Spring REST Controller that satisfies the contract you specified in your consumer
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-spring-provider)
@@ -91,7 +91,7 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Provider with Spring Cloud Contract
 
-1. Start with the code in the folder [provider/scc-spring](provider/scc-spring)
+1. Start with the code in the folder [provider/scc-spring-userservuce](provider/scc-spring-userservice)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-provider-spring-cloud-contract/)
    to set up a Spring REST Controller that satisfies the contract you specified in your consumer
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-provider)
