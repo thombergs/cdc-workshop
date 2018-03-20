@@ -21,11 +21,12 @@ the instructions to set up a consumer, a provider and a contract between them.
 
 **Complete the following tasks**
 
+1. Clone this repository
 1. implement the selected consumer (which implies creating a contract)
 1. implement the selected provider (which implies creating a test against the contract)
-1. change the contract and repeat steps 1 and 2 to update the consumer and provider to the contract 
+1. change the contract in some way and repeat steps 1 and 2 to update the consumer and provider to the contract 
 
-You can find more detailed steps for each of the consumers and providers below.
+You can find more detailed steps for each of the consumers and providers below. 
 
 ## Consumer Implementations
 
@@ -47,7 +48,7 @@ You can find more detailed steps for each of the consumers and providers below.
 * a pact file created from an Angular build 
 * if working with a Pact Broker: the pact file has been published on the Pact Broker
 
-### Java Spring Consumer with Pact
+### Java Feign Consumer with Pact
 
 1. Start with the code in the folder [consumer/pact-feign-userclient](consumer/pact-feign-userclient)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-feign-pact/)
@@ -61,13 +62,13 @@ You can find more detailed steps for each of the consumers and providers below.
 * a pact file created from a Gradle build 
 * if working with a Pact Broker: the pact file has been published on the Pact Broker
 
-### Java Spring Consumer with Spring Cloud Contract
+### Java Feign Consumer with Spring Cloud Contract
 
 1. Start with the code in the folder [consumer/scc-feign-userclient](consumer/scc-feign-userclient)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-consumer-spring-cloud-contract/)
    to set up a contract and a consumer test against that contract
    * in the contract, specify a different API from the one in the article (instead of creating users, do something else)
-   * the "provider code base" mentioned in the article is the folder [provider/scc-spring-userservuce](provider/scc-spring-userservice)
+   * the "provider code base" mentioned in the article is the folder [provider/scc-spring-userservice](provider/scc-spring-userservice)
    * skip the step "verify the consumer code online" if you do not have access to a Maven repository where you can publish
      the provider mock
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-consumer)
@@ -92,7 +93,7 @@ You can find more detailed steps for each of the consumers and providers below.
 
 ### Java Spring Provider with Spring Cloud Contract
 
-1. Start with the code in the folder [provider/scc-spring-userservuce](provider/scc-spring-userservice)
+1. Start with the code in the folder [provider/scc-spring-userservice](provider/scc-spring-userservice)
 1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-provider-spring-cloud-contract/)
    to set up a Spring REST Controller that satisfies the contract you specified in your consumer
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-provider)
