@@ -1,0 +1,4 @@
+include 'consumer:pact-feign-userclient'
+include 'consumer:scc-feign-userclient'
+include 'provider:pact-spring-userservice'
+include 'provider:scc-spring-userservice'
