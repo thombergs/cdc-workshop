@@ -107,7 +107,7 @@ Write down the definition in a text file or on paper for later reference.
 ## Task #7: Implement a Spring Messaging Consumer & Provider with Pact 
 
 1. Start with the code in the folders [consumer/pact-message-consumer](consumer/pact-message-consumer) and
-   [consumer/pact-message-producer](provider/pact-message-producer)
+   [provider/pact-message-producer](provider/pact-message-producer)
 1. Go through the steps explained in [this tutorial](https://reflectoring.io/cdc-pact-messages/)
    to set up a Spring Messaging Consumer and Producer that satisfy the contract from Task #6
 1. If you need orientation, have a look at the complete example: [consumer](https://github.com/thombergs/code-examples/tree/master/pact/pact-message-consumer) and
