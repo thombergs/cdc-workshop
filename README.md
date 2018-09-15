@@ -6,6 +6,9 @@ and / or [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/)
 
 ## Preparation
 
+If you're new to Consumer-Driven Contracts, read [this article](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/)
+as an introduction to CDC.
+
 The setup takes some time since dependencies have to be loaded from the internet.
 So it makes sense to follow these steps in advance:
 
