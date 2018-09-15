@@ -1,4 +1,4 @@
-include 'consumer:pact-feign-userclient'
-include 'consumer:scc-feign-userclient'
-include 'provider:pact-spring-userservice'
-include 'provider:scc-spring-userservice'
+include 'consumer:pact-feign-consumer'
+include 'consumer:pact-message-consumer'
+include 'provider:pact-message-producer'
+include 'provider:pact-spring-provider'

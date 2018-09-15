@@ -1,0 +1,55 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springboot_version}"
+    }
+}
+
+plugins {
+    id "au.com.dius.pact" version "3.5.20"
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+version '1.0.0.SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springcloud_version}"
+    }
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.cloud:spring-cloud-starter-openfeign')
+    compile('org.springframework.cloud:spring-cloud-starter-netflix-ribbon')
+    compile('com.h2database:h2:1.4.196')
+    testCompile('org.codehaus.groovy:groovy-all:2.4.6')
+    testCompile("au.com.dius:pact-jvm-consumer-junit5_2.12:${pact_version}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testRuntimeOnly( 'org.junit.jupiter:junit-jupiter-engine:5.1.0')
+}
+
+pact {
+    publish {
+        pactDirectory = 'target/pacts'
+        pactBrokerUrl = 'URL'
+        pactBrokerUsername = 'USERNAME'
+        pactBrokerPassword = 'PASSWORD'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

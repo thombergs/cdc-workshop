@@ -4,102 +4,154 @@ This repository points to some material that can be used in a hands-on workshop
 to get a feel for Consumer-Driven Contracts with the frameworks [Pact](https://docs.pact.io/)
 and / or [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/).
 
-If you need to get an idea about the concept of Consumer-Driven Contracts, read
-[this article](https://reflectoring.io/7-reasons-for-consumer-driven-contracts/) 
-before moving on to the tasks below.
+## Preparation
 
-## The Tasks in this Workshop
+The setup takes some time since dependencies have to be loaded from the internet.
+So it makes sense to follow these steps in advance:
 
-Select a valid consumer / provider combination from the table below and follow
-the instructions to set up a consumer, a provider and a contract between them. 
+* make sure you have Java >= 8 installed
+* for the Angular example, make sure you have the latest NodeJS installed
+* clone this repository
+* run `npm install` in the folder `consumer/pact-angular-consumer` to load all JS dependencies
+* run `./gradlew build` int the folder `consumer/pact-feign-consumer` to load the 
+  needed Gradle version and most of the needed dependencies
 
-| | Spring MVC Provider with Pact | Spring MVC Provider with Spring Cloud Contract|
-| ------------- |-------------| ----- |
-| **Angular Consumer with Pact** | :heavy_check_mark: | :heavy_check_mark: |
-| **Java Feign Consumer with Pact** | :heavy_check_mark: | :x: |
-| **Java Feign Consumer with Spring Cloud Contract** | :x: | :heavy_check_mark: |
+## Task #1: Define a REST contract
 
-**Complete the following tasks**
+In a group of 2-3, dream up a use case and define a contract
+between a REST consumer and a REST provider.
 
-1. Clone this repository
-1. implement the selected consumer (which implies creating a contract)
-1. implement the selected provider (which implies creating a test against the contract)
-1. change the contract in some way and repeat steps 1 and 2 to update the consumer and provider to the contract 
+The contract should consist of about a handful of interactions (request / response pairs).
 
-You can find more detailed steps for each of the consumers and providers below. 
+Per interaction, define
 
-## Consumer Implementations
+* the path of the request
+* the HTTP method of the request
+* potential request headers
+* potential query parameters in the request
+* the JSON structure of the request body
+* the JSON structure of the response body
+* the HTTP status code of the response
+* potential response headers.
 
-### Angular Consumer with Pact
+Write down the definition in a text file or on paper for later reference.
 
-1. Download and install the latest NodeJS distribution at [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
-1. Verify that npm and Node are installed properly by calling `node -v` and `npm -v`
-1. Start with the code in the folder [consumer/pact-angular-userclient](consumer/pact-angular-userclient)
-1. Run `npm install` in the folder and check that a `node_modules` folder has been created
-1. Run `npm run test` to verify that the Angular tests run on your machine (you need to have Google Chrome installed)
-1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contracts-with-angular-and-pact/) 
+## Task #2: Implement a REST Consumer with Spring, Feign & Pact
+
+1. Start with the code in the folder [consumer/pact-feign-consumer](consumer/pact-feign-consumer)
+1. Go through the steps explained in [this tutorial](https://reflectoring.io/consumer-driven-contract-feign-pact/)
    to set up a consumer test that creates a pact file
-   * create a different API from the one in the article (instead of creating users, do something else)
-   * choose different consumer and provider names to make your implementation unique
-1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-angular)
-1. Run `npm run test` again to run the tests and check that a pact file has been created in the `pacts` folder
-
-**Results:**
-* a pact file created from an Angular build 
-* if working with a Pact Broker: the pact file has been published on the Pact Broker
-
-### Java Feign Consumer with Pact
-
-1. Start with the code in the folder [consumer/pact-feign-userclient](consumer/pact-feign-userclient)
-1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-feign-pact/)
-   to set up a consumer test that creates a pact file
-   * create a different API from the one in the article (instead of creating users, do something else)
+   * use one interaction of the API you defined in Task #1 instead of the API described in the tutorial
    * choose different consumer and provider names to make your implementation unique
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-feign-consumer)
 1. Run `./gradlew build` to run the tests and check that a pact file has been created in the folder `target/pacts`
 
 **Results:**
 * a pact file created from a Gradle build 
-* if working with a Pact Broker: the pact file has been published on the Pact Broker
 
-### Java Feign Consumer with Spring Cloud Contract
+## Task #3: Implement a REST Provider with Spring & Pact
 
-1. Start with the code in the folder [consumer/scc-feign-userclient](consumer/scc-feign-userclient)
-1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-consumer-spring-cloud-contract/)
-   to set up a contract and a consumer test against that contract
-   * in the contract, specify a different API from the one in the article (instead of creating users, do something else)
-   * the "provider code base" mentioned in the article is the folder [provider/scc-spring-userservice](provider/scc-spring-userservice)
-   * skip the step "verify the consumer code online" if you do not have access to a Maven repository where you can publish
-     the provider mock
-1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-consumer)
-
-**Results:**
-* a Groovy contract file in the provider code base
-* a working consumer test verifying that the client works as specified in the contract
-
-## Provider Implementations
-
-### Java Spring Provider with Pact
-
-1. Start with the code in the folder [provider/pact-spring-userservice](provider/pact-spring-userservice)
-1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-provider-pact-spring/)
-   to set up a Spring REST Controller that satisfies the contract you specified in your consumer
+1. Start with the code in the folder [provider/pact-spring-provider](provider/pact-spring-provider)
+1. Go through the steps explained in [this tutorial](https://reflectoring.io/consumer-driven-contract-provider-pact-spring/)
+   to set up a Spring REST Controller that satisfies the contract from Task #2
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-spring-provider)
 1. Run `./gradlew build` to run the provider test and check that it works
 
 **Results:**
-* a REST controller that is verified to work against the consumer-driven contract
-* if working with a Pact Broker: the pact file for the provider test has been loaded from the Pact Broker
+* a REST controller that is verified to work against the contract defined in Task #2
 
-### Java Spring Provider with Spring Cloud Contract
+## Task #4: Use a Pact Broker
 
-1. Start with the code in the folder [provider/scc-spring-userservice](provider/scc-spring-userservice)
-1. Go through the steps explained in [this article](https://reflectoring.io/consumer-driven-contract-provider-spring-cloud-contract/)
-   to set up a Spring REST Controller that satisfies the contract you specified in your consumer
-1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-provider)
-1. Run `./gradlew generateContractTests` to generate the provider tests
-1. Run `./gradlew build` to run the tests 
+1. Insert the pact broker credentials you have been provided into the `pact` section of the `build.gradle` file of
+   the consumer you created in Task #2
+1. Run `./gradlew build` in the consumer code base to create the pact file
+1. Run `./gradlew pactPublish` in the consumer code base to publish the pact to the broker
+1. Visit the Pact Broker in your browser and check that the pact has been published
+1. Replace the `@PactFolder` annotation in the provider test from Task #3 with the `@PactBroker` annotation to
+   load the pact from the broker instead of from the file system
 
 **Results:**
-* contract tests verifying that our controller works have been automatically generated
-* the contract test passes
+* the consumer published the pact on the broker and the provider loaded it from the broker
+
+## Task #5: Implement a REST Consumer with Angular & Pact
+
+1. Download and install the latest NodeJS distribution at [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+1. Verify that npm and Node are installed properly by calling `node -v` and `npm -v`
+1. Start with the code in the folder [consumer/pact-angular-consumer](consumer/pact-angular-consumer)
+1. Run `npm install` in the folder and check that a `node_modules` folder has been created
+1. Run `npm run test` to verify that the Angular tests run on your machine (you need to have Google Chrome installed)
+1. Go through the steps explained in [this tutorial](https://reflectoring.io/consumer-driven-contracts-with-angular-and-pact/) 
+   to set up a consumer test that creates a pact file
+   * use one interaction of the API you defined in Task #1 instead of the API described in the tutorial
+   * choose different consumer and provider names to make your implementation unique
+1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-angular)
+1. Run `npm run test` again to run the tests and check that a pact file has been created in the `pacts` folder
+
+**Results:**
+* a pact file created from an Angular build 
+
+## Task #6: Define a Messaging Contract
+
+In a group of 2-3, dream up a use case and define a contract
+between a message consumer and a message producer.
+
+The contract should consist of one or two message types.
+
+Per message, define the JSON structure of the message body. 
+
+Write down the definition in a text file or on paper for later reference.
+
+## Task #7: Implement a Spring Messaging Consumer & Provider with Pact 
+
+1. Start with the code in the folders [consumer/pact-message-consumer](consumer/pact-message-consumer) and
+   [consumer/pact-message-producer](consumer/pact-message-producer)
+1. Go through the steps explained in [this tutorial](https://reflectoring.io/cdc-pact-messages/)
+   to set up a Spring Messaging Consumer and Producer that satisfy the contract from Task #6
+1. If you need orientation, have a look at the complete example: [consumer](https://github.com/thombergs/code-examples/tree/master/pact/pact-message-consumer) and
+      [producer](https://github.com/thombergs/code-examples/tree/master/pact/pact-message-producer)
+1. Run `./gradlew build` in the consumer and producer codebase to check that the consumer and producer tests work as 
+      expected
+
+**Results:**
+* a messaging consumer and producer that are verified with pact to speak the same language
+
+## Task #8: Implement a REST Consumer & Provider with Spring Cloud Contract 
+
+1. Start with the code in the folders [consumer/scc-consumer](consumer/scc-consumer) and 
+   [provider/scc-provider](provider/scc-provider)
+1. Go through the steps explained in [this tutorial](https://reflectoring.io/consumer-driven-contract-consumer-spring-cloud-contract/)
+   and [this tutorial](consumer-driven-contract-provider-spring-cloud-contract/)
+   to set up a REST Consumer & Provider with Spring Cloud Contract
+    * use one interaction of the API you defined in Task #1 instead of the API described in the tutorials
+1. If you need orientation, have a look at the complete example: [consumer](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-consumer) and
+   [producer](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-provider)
+1. Run `./gradlew build` in the consumer and producer codebase to check that the consumer and producer tests work as 
+   expected
+
+**Results:**
+* a REST consumer and provider with Spring Cloud Contract tests to verify that they speak the same language
+
+## Example Workshop Agenda
+
+* Introduction
+  * Who is Who? (Interviews in Pairs and each partner introduces the other)
+  * Talk: Intro to Consumer-Driven Contracts
+  * Demo: CDC Workflow with Angular (Node), Pact and Spring Boot
+  * Task #1 Define a REST contract
+* REST Contracts with Pact
+  * Task #2 Implement a REST Consumer with Spring, Feign & Pact
+  * Task #3: Implement a REST Provider with Spring & Pact
+  * Talk: How do we manage Provider States with Pact?
+  * Talk: Introduction to the Pact Broker
+  * Task #4: Use a Pact Broker
+  * Hands-On: Implementing a REST Consumer with Angular and Pact
+  * Task #5: Implement a REST Consumer with Angular & Pact
+* Messaging Contracts with Pact
+  * Task #6: Define a Messaging Contract
+  * Talk: How can we Test async Messaging with CDC?
+  * Task #7: Implement a Spring Messaging Consumer & Provider with Pact 
+* Continuous Integration Workflow with Pact 
+  * Talk: Continuous Integration with Pact
+* REST Contracts with Spring Cloud Contract 
+  * Talk: CDC Workflow with Spring Cloud Contract
+  * Task #8: Implement a REST Consumer & Provider with Spring Cloud Contract 
