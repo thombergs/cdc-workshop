@@ -123,7 +123,7 @@ Write down the definition in a text file or on paper for later reference.
 1. Start with the code in the folders [consumer/scc-consumer](consumer/scc-consumer) and 
    [provider/scc-provider](provider/scc-provider)
 1. Go through the steps explained in [this tutorial](https://reflectoring.io/consumer-driven-contract-consumer-spring-cloud-contract/)
-   and [this tutorial](consumer-driven-contract-provider-spring-cloud-contract/)
+   and [this tutorial](https://reflectoring.io/consumer-driven-contract-provider-spring-cloud-contract/)
    to set up a REST Consumer & Provider with Spring Cloud Contract
     * use one interaction of the API you defined in Task #1 instead of the API described in the tutorials
 1. If you need orientation, have a look at the complete example: [consumer](https://github.com/thombergs/code-examples/tree/master/spring-cloud/spring-cloud-contract-consumer) and
