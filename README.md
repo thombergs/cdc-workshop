@@ -76,6 +76,21 @@ Write down the definition in a text file or on paper for later reference.
 **Results:**
 * the consumer published the pact on the broker and the provider loaded it from the broker
 
+
+## Task #4.1: Manage Multiple Provider States with Pact
+
+1. Add an interaction to your existing consumer test that requires a new provider state. The provider test will now fail.
+1. Add the `@PactFilter` annotation to your existing provider test to make it work again.
+1. Note that the "Last Verified" flag on the Pact Broker is not updated when running the test with `@PactFilter`.
+1. Create a new Controller in the provider codebase that satisfies the new interaction.
+1. Create a new `@State` method in the existing provider test and remove the `@PactFilter` annotation again. The test should work.
+1. Extract all `@State` methods into a default method in a separate interface each
+1. Make the provider test implement all those state interfaces. The test should still work.
+
+**Results:**
+* the handling of provider states is moved into a separate interface each while the provider test 
+  verifies the whole contract each time
+
 ## Task #5: Implement a REST Consumer with Angular & Pact
 
 1. Download and install the latest NodeJS distribution at [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
@@ -144,10 +159,10 @@ Write down the definition in a text file or on paper for later reference.
 * REST Contracts with Pact
   * Task #2 Implement a REST Consumer with Spring, Feign & Pact
   * Task #3: Implement a REST Provider with Spring & Pact
-  * Talk: How do we manage Provider States with Pact?
   * Talk: Introduction to the Pact Broker
   * Task #4: Use a Pact Broker
-  * Hands-On: Implementing a REST Consumer with Angular and Pact
+  * Talk: How do we manage Provider States with Pact?
+  * Task #4.1: Manage Multiple Provider States with Pact
   * Task #5: Implement a REST Consumer with Angular & Pact
 * Messaging Contracts with Pact
   * Task #6: Define a Messaging Contract
