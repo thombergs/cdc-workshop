@@ -12,7 +12,7 @@ as an introduction to CDC.
 The setup takes some time since dependencies have to be loaded from the internet.
 So it makes sense to follow these steps in advance:
 
-* make sure you have Java >= 8 installed
+* make sure you have Java 8 installed
 * for the Angular example, make sure you have the latest NodeJS installed
 * clone this repository
 * run `npm install` in the folder `consumer/pact-angular-consumer` to load all JS dependencies
@@ -80,7 +80,7 @@ Write down the definition in a text file or on paper for later reference.
 ## Task #4.1: Manage Multiple Provider States with Pact
 
 1. Add an interaction to your existing consumer test that requires a new provider state. The provider test will now fail.
-1. Add the `@PactFilter` annotation to your existing provider test to make it work again.
+1. Add the [`@PactFilter`](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-junit#filtering-by-provider-state) annotation to your existing provider test to make it work again.
 1. Note that the "Last Verified" flag on the Pact Broker is not updated when running the test with `@PactFilter`.
 1. Create a new Controller in the provider codebase that satisfies the new interaction.
 1. Create a new `@State` method in the existing provider test and remove the `@PactFilter` annotation again. The test should work.
