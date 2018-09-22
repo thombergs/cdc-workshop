@@ -153,23 +153,23 @@ Write down the definition in a text file or on paper for later reference.
 
 * Introduction
   * Who is Who? (Interviews in Pairs and each partner introduces the other)
-  * Talk: Intro to Consumer-Driven Contracts
+  * Talk: Why Consumer-Driven Contracts
   * Demo: CDC Workflow with Angular (Node), Pact and Spring Boot
-  * Task #1 Define a REST contract
 * REST Contracts with Pact
+  * Task #1 Define a REST contract
   * Task #2 Implement a REST Consumer with Spring, Feign & Pact
   * Task #3: Implement a REST Provider with Spring & Pact
-  * Talk: Introduction to the Pact Broker
+  * Talk: Introduction to Pact Broker
   * Task #4: Use a Pact Broker
-  * Talk: How do we manage Provider States with Pact?
+  * Talk: Managing Provider States with Pact
   * Task #4.1: Manage Multiple Provider States with Pact
   * Task #5: Implement a REST Consumer with Angular & Pact
-* Messaging Contracts with Pact
-  * Task #6: Define a Messaging Contract
-  * Talk: How can we Test async Messaging with CDC?
-  * Task #7: Implement a Spring Messaging Consumer & Provider with Pact 
 * Continuous Integration Workflow with Pact 
   * Talk: Continuous Integration with Pact
+* Messaging Contracts with Pact
+  * Talk: A Contract-Testable Architecture
+  * Task #6: Define a Messaging Contract
+  * Task #7: Implement a Spring Messaging Consumer & Provider with Pact 
 * REST Contracts with Spring Cloud Contract 
   * Talk: CDC Workflow with Spring Cloud Contract
   * Task #8: Implement a REST Consumer & Provider with Spring Cloud Contract 
