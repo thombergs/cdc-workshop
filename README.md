@@ -58,7 +58,7 @@ Write down the definition in a text file or on paper for later reference.
 1. If you need orientation, have a look at the [complete example](https://github.com/thombergs/code-examples/tree/master/pact/pact-spring-provider)
 1. Run `./gradlew build` to run the provider test and check that it works
 
-## Task #4: Implement a REST Consumer & Provider with Spring Cloud Contract 
+#### Task #4: Implement a REST Consumer & Provider with Spring Cloud Contract 
 
 1. Start with the code in the folders [consumer/scc-consumer](consumer/scc-consumer) and 
    [provider/scc-provider](provider/scc-provider)
